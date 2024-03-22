@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salu-portfolio
+  namespace: portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salu-portfolio
+  template:
+    metadata:
+      labels:
+        app: salu-portfolio
+    spec:
+      containers:
+        - name: salu-portfolio
+          image: waji97/salmansite:latest
+          ports:
+            - containerPort: 3000
